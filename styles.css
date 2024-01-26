@@ -1,0 +1,133 @@
+@media screen and (max-width: 375px) {
+
+
+.upper-part {
+  background-color: hsl(278, 94%, 30%);
+  height: 14rem;
+}
+
+.card-back {
+  background-color: white;
+  height: 10rem;
+  width: 18rem;
+  position: relative;
+  top: 1rem;
+  z-index: 1;
+  border: 1px solid;
+  border-radius: 10px;
+  margin-right: 1rem;
+  margin-left: 3rem;
+}
+
+.card-swipe {
+  height: 2rem;
+  background-color: black;
+}
+
+.card-back__cvc {
+  background-color: gray;
+  color: white;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid none;
+  border-radius: 5px;
+  margin-top: 0.8rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+#cvc {
+  display: flex;
+  justify-content: end;
+  margin-left: 2rem;
+}
+
+.card-front {
+  background-image: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+  color: white;
+  height: 10rem;
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 7rem;
+  border: 1px solid none;
+  border-radius: 10px;
+  z-index: 2;
+  margin-left: 1.5rem;
+}
+
+.card-front__circles {
+  display: flex;
+  align-items: center;
+}
+
+.card-circle-one {
+  background-color: white;
+  border-radius: 50px;
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.card-circle-two {
+  border: 1px solid white;
+  border-radius: 50px;
+  height: 0.8rem;
+  width: 0.8rem;
+  margin-top: 1rem;
+  margin-left: 0.5rem;
+}
+
+.card-front__card-numbers {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 3.2rem;
+  margin-bottom: 0;
+}
+
+.card-front__lower-part {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 1rem;
+}
+
+.card-front__lower-part h5 {
+  margin: 0;
+}
+
+.card-info {
+  display: grid;
+  grid-template-columns: repeat(1, 2fr);
+  gap: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 4rem;
+  background-color: white;
+}
+
+#name {
+width: 20rem;
+}
+
+#card-num {
+  width: 20rem;
+}
+
+#date {
+width: 5rem;
+}
+
+#cvc {
+  width: 10rem;
+}
+
+#button {
+  width: 20rem;
+}
+
+}
