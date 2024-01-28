@@ -21,6 +21,7 @@
         <hr class="card-swipe">
         <div class="card-back__cvc">
           <h5 id="cvc">000</h5>
+          <span id="entered-cvc"></span>
         </div>
       </div>
       <div class="card-front" id="card-front">
@@ -28,27 +29,44 @@
           <div class="card-circle-one"></div>
           <div class="card-circle-two"></div>
         </div>
-        <h5 id="card-numbers" class="card-front__card-numbers">0000  0000  0000  0000</h5>
-        <span id="entered-number"></span>
-        <div class="card-front__lower-part">
-          <h5 id="card-name">Jane Appleseed</h5><h5 id="card-dates">00/00</h5>
+        <div id="container">
+          <h2 id="card-numbers" class="card-front__card-numbers">0000  0000  0000  0000</h2>
+        </div>
+        <div class="card-front-bottom" id="card-front-bottom">
+          <h5 class="card-front-name" id="card-name" class="card-name">Jane Appleseed</h5>
+          <div class="card-front-dates">
+            <h5 class="card-front-name" id="card-date-month">00</h5>
+            <h5 class="card-front-name">/</h5>
+            <h5 class="card-front-name" id="card-date-year">00</h5>
+          </div>
         </div>  
       </div>
     </section>
-  <div class="card-info">
-    <label for="card-holder">Cardholder Name</label>
-    <input type="text" id="card-holder" placeholder="e.g. Jane Appleseed"></input>
-    <label for="card-num">Card Number</label>
-    <input type="number" id="card-num" placeholder="e.g. 1234 5678 9123 0000"></input>
-    <div class="info">
-      <label for="date">Exp. Date (MM/YY)</label>
-      <label for="cvc">CVC</label>
-      <input type="number" id="date-month" placeholder="MM"></input>
-      <input type="number" id="date-year" placeholder="YY"></input>
-      <input type="number" id="input-cvc" placeholder="e.g. 123"></input>
+  <form class="card-info">
+    <div>
+      <label for="card-holder">Cardholder Name</label>
+      <input type="text" id="card-holder" class="card-input-fields" placeholder="e.g. Jane Appleseed"></input>
+      <span id="error-message-card-name"></span>
+    </div>
+    <div>
+      <label for="card-num">Card Number</label>
+      <input type="text" id="card-num" class="card-input-fields" placeholder="e.g. 1234 5678 9123 0000"></input>
+      <span id="error-message-card-num"></span>
+    </div>
+    
+    <div>
+      <label for="dates">Exp. Date (MM/YY)</label>
+      <label for="cvc" class="label-cvc">CVC</label>
+    <div>
+      <input type="text" id="date-month" class="dates" placeholder="MM"></input>
+      <input type="text" id="date-year" class="dates" placeholder="YY"></input>
+      <input type="text" id="input-cvc" class="input-cvc" placeholder="e.g. 123"></input>
+    </div>
+      <span id="error-message-dates"></span>
+      <span id="error-message-cvc"></span>
     </div>
     <button id="button">Confirm</button>
-  </div>
+  </form>
   <!-- Completed state start -->
 
   <!-- Thank you!
