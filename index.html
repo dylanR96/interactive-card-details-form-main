@@ -1,78 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
   <title>Frontend Mentor | Interactive card details form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
-  <main>
-    <section class="upper-part">
-      <div class="card-back">
-        <hr class="card-swipe">
-        <div class="card-back__cvc">
+  <main class="main">
+    <section class="card-section">
+      <div class="card-section__back">
+        <hr class="card-section__swipe">
+        <div class="card-section__cvc">
           <h5 id="cvc">000</h5>
           <span id="entered-cvc"></span>
         </div>
       </div>
-      <div class="card-front" id="card-front">
-        <div class="card-front__circles">
-          <div class="card-circle-one"></div>
-          <div class="card-circle-two"></div>
+      <div class="card-section__front" id="card-front">
+        <div class="card-section__circle">
+          <div class="card-section__circle--one"></div>
+          <div class="card-section__circle--two"></div>
         </div>
-        <div id="container">
-          <h2 id="card-numbers" class="card-front__card-numbers">0000  0000  0000  0000</h2>
+        <div>
+          <h2 id="card-numbers" class="card-section__card-num">0000 0000 0000 0000</h2>
         </div>
-        <div class="card-front-bottom" id="card-front-bottom">
-          <h5 class="card-front-name" id="card-name" class="card-name">Jane Appleseed</h5>
-          <div class="card-front-dates">
-            <h5 class="card-front-name" id="card-date-month">00</h5>
-            <h5 class="card-front-name">/</h5>
-            <h5 class="card-front-name" id="card-date-year">00</h5>
+        <div class="card-section__placeholders">
+          <h5 class="card-section__placeholder-info" id="card-name" class="card-name">Jane Appleseed</h5>
+          <div class="card-section__placeholder-dates">
+            <h5 class="card-section__placeholder-info" id="card-date-month">00</h5>
+            <h5 class="card-section__placeholder-info">/</h5>
+            <h5 class="card-section__placeholder-info" id="card-date-year">00</h5>
           </div>
-        </div>  
+        </div>
       </div>
     </section>
-  <form class="card-info">
-    <div>
-      <label for="card-holder">Cardholder Name</label>
-      <input type="text" id="card-holder" class="card-input-fields" placeholder="e.g. Jane Appleseed"></input>
-      <span id="error-message-card-name"></span>
-    </div>
-    <div>
-      <label for="card-num">Card Number</label>
-      <input type="text" id="card-num" class="card-input-fields" placeholder="e.g. 1234 5678 9123 0000"></input>
-      <span id="error-message-card-num"></span>
-    </div>
-    
-    <div>
-      <label for="dates">Exp. Date (MM/YY)</label>
-      <label for="cvc" class="label-cvc">CVC</label>
-    <div>
-      <input type="text" id="date-month" class="dates" placeholder="MM"></input>
-      <input type="text" id="date-year" class="dates" placeholder="YY"></input>
-      <input type="text" id="input-cvc" class="input-cvc" placeholder="e.g. 123"></input>
-    </div>
-      <span id="error-message-dates"></span>
-      <span id="error-message-cvc"></span>
-    </div>
-    <button id="button">Confirm</button>
-  </form>
-  <!-- Completed state start -->
+    <section class="info-section">
+      <form class="info-section__form" id="card-form">
+        <div class="info-section__labels">
+          <label for="card-holder">Cardholder Name</label>
+          <input type="text" id="card-holder" class="info-section__input-fields" placeholder="e.g. Jane Appleseed"></input>
+          <span id="error-message-card-name"></span>
+        </div>
+        <div class="info-section__labels">
+          <label for="card-num">Card Number</label>
+          <input type="text" id="card-num" class="info-section__input-fields" placeholder="e.g. 1234 5678 9123 0000"></input>
+          <span id="error-message-card-num"></span>
+        </div>
 
-  <!-- Thank you!
-  We've added your card details
-  Continue
-   -->
+        <div>
+          <label for="dates">Exp. Date (MM/YY)</label>
+          <label for="cvc" class="info-section__label-cvc">CVC</label>
+          <div>
+            <div>
+              <input type="text" id="date-month" class="info-section__input-dates" placeholder="MM"></input>
+              <input type="text" id="date-year" class="info-section__input-dates" placeholder="YY"></input>
+              <input type="text" id="input-cvc" class="info-section__input-cvc" placeholder="e.g. 123"></input>
+            </div>
+
+          </div>
+          <span id="error-message-bottom"></span>
+        </div>
+        <button class="info-section__form-btn" id="button">Confirm</button>
+      </form>
+    </section>
   </main>
   <script src="script.js"></script>
 </body>
