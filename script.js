@@ -114,7 +114,7 @@ function updateNum(e) {
     errorParams.colour = 'hsl(0, 100%, 66%)';
     errorParams.visibility = 'visible';
     errorChecks[1] = false;
-  } else if (e.target.value.length < 16) {
+  } else if (e.target.value.length < 16 && e.target.value.length > 0) {
     errorParams.errorMessage = errorLessThan;
     errorParams.colour = 'hsl(0, 100%, 66%)';
     errorParams.visibility = 'visible';
