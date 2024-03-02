@@ -271,6 +271,7 @@ btnConfirm.addEventListener('click', (e) => {
       errorMessageForm.textContent = '';
       cardForm.style.display = 'none';
       completedState.style.display = 'flex'
+      completedState.style.marginTop = '5rem';
     } else {
       errorMessageForm.style.visibility = 'visible';
       errorMessageForm.textContent = 'All fields must be filled with valid info.'
