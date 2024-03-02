@@ -21,6 +21,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   width: 100%;
 }
 
@@ -133,6 +134,7 @@ input[type=text] {
   margin-top: 4rem;
   background-color: white;
   height: 100%;
+  margin-bottom: 2rem;
 }
 
 .info-section__labels {
@@ -177,6 +179,12 @@ input[type=text] {
   border-radius: 10px;
 }
 
+.info-section__completed-state {
+  display: none;
+  margin-top: 4rem;
+  flex-direction: column;
+  align-items: center;
+}
 
 
 @media screen and (max-width: 800px) {
