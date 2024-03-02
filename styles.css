@@ -1,4 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+
+
 body {
+  font-family: "Space Grotesk";
+  font-weight: 500;
   background-color: white;
   margin: 0;
   height: 100svh;
@@ -12,9 +17,20 @@ body {
 }
 
 .card-section {
-  background-color: hsl(278, 94%, 30%);
+  background-image: url(images/bg-main-desktop.png);
+  background-size: cover;
   width: 30%;
   position: relative;
+}
+
+input:hover {
+ cursor: pointer;
+}
+
+input:focus {
+  border-radius: 10px;
+  box-shadow: 0 0 0 1px hsl(249, 99%, 64%),
+              0 0 0 1px hsl(278, 94%, 30%);
 }
 
 .info-section {
@@ -41,12 +57,13 @@ body {
 }
 
 .card-section__swipe {
+  margin-top: 1rem;
   height: 2rem;
   background-color: black;
 }
 
 .card-section__cvc {
-  background-color: gray;
+  background-color: rgba(173, 182, 191, 1);
   color: white;
   height: 2rem;
   width: 15rem;
@@ -60,8 +77,62 @@ body {
   padding-right: 1rem;
 }
 
+.card-section__back-lines {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+.card-section__line-containers {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.3rem;
+}
+
+.card-section__line-XL {
+  margin: 0.08rem;
+  width: 5rem;
+  height: 0.1rem;
+  border-radius: 20%;
+  background-color: rgba(173, 182, 191, 1);
+}
+
+.card-section__line-L {
+  margin: 0.08rem;
+  width: 2rem;
+  height: 0.1rem;
+  border-radius: 20%;
+  background-color: rgba(173, 182, 191, 1);
+}
+
+.card-section__line-M {
+  margin: 0.08rem;
+  width: 1rem;
+  height: 0.1rem;
+  border-radius: 20%;
+  background-color: rgba(173, 182, 191, 1);
+}
+
+.card-section__line-S {
+  margin: 0.08rem;
+  width: 1rem;
+  height: 0.1rem;
+  border-radius: 20%;
+  background-color: rgba(173, 182, 191, 1);
+}
+
+.card-section__line-XS {
+  margin: 0.08rem;
+  width: 0.4rem;
+  height: 0.1rem;
+  border-radius: 20%;
+  background-color: rgba(173, 182, 191, 1);
+}
+
 .card-section__front {
-  background-image: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+  background-image: url(images/bg-card-front.png);
+  background-size: cover;
+  /* background: linear-gradient(to right bottom, hsl(249, 99%, 64%), hsl(279, 6%, 55%), hsl(278, 68%, 11%)); */
+  /* background-image: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%)); */
   color: white;
   height: 10em;
   width: 18rem;
@@ -120,7 +191,7 @@ body {
 }
 
 input[type=text] {
-  outline:none
+  outline: none;
 }
 
 .info-section__form {
@@ -128,7 +199,7 @@ input[type=text] {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1rem;
   margin-left: 1rem;
   margin-right: 1rem;
   margin-top: 4rem;
@@ -179,11 +250,23 @@ input[type=text] {
   border-radius: 10px;
 }
 
+.info-section-error-message {
+  visibility: hidden;
+  color: hsl(0, 100%, 66%);
+  display: flex;
+  justify-content: center;
+}
+
 .info-section__completed-state {
   display: none;
-  margin-top: 4rem;
   flex-direction: column;
   align-items: center;
+}
+
+.info-section__completed-text {
+  color: rgba(173, 182, 191, 1);
+  margin-top: 0;
+  margin-bottom: 3rem;
 }
 
 
@@ -194,7 +277,8 @@ input[type=text] {
 }
 
 .card-section {
-  background-color: hsl(278, 94%, 30%);
+  background-image: url(images/bg-main-mobile.png);
+  background-size: cover;
   height: 14rem;
   width: 100%;
   position: relative;
@@ -221,7 +305,6 @@ input[type=text] {
 }
 
 .card-section__front {
-  background-image: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%));
   color: white;
   height: 10em;
   width: 18rem;
