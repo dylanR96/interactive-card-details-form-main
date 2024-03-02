@@ -22,13 +22,13 @@ const btnContinue = document.getElementById('btn-continue');
 const errorMessageForm = document.getElementById('error-message-info');
 const completedState = document.getElementById('completed-state');
 
-inputNum.addEventListener('input', updateNum);
 inputName.addEventListener('input', updateName);
+inputNum.addEventListener('input', updateNum);
 inputMonth.addEventListener('input', updateMonth);
 inputYear.addEventListener('input', updateYear);
 inputCvc.addEventListener('input', updateCvc);
 
-const inputFields = [inputNum, inputName, inputMonth, inputYear, inputCvc];
+const inputFields = [inputName, inputNum, inputMonth, inputYear, inputCvc];
 
 let defaultNum = cardNum.textContent;
 let defaultName = cardName.textContent;
@@ -40,8 +40,8 @@ const defaults = [defaultNum, defaultName, defaultMonth, defaultYear, defaultCvc
 
 const defaultSpaces = [cardNum, cardName, cardMonth, cardYear, cvc];
 
-let errorNum;
 let errorName;
+let errorNum;
 let errorMonth;
 let errorYear;
 let errorCvc;
@@ -54,8 +54,10 @@ currentYear = currentYear.toString().substr(-2);
 const errorTextNum = 'Wrong format, numbers only.';
 const errorTextName = 'Wrong format, letters only.';
 const errorTextZeros = 'Can not be equal to or less than 0';
-const errorTextYear = 'Please enter a valid year.';
+const errorOnlyZeros = 'Number can not contain only 0';
+const errorTextYear = 'Must be after current year.';
 const errotTextMonth = 'Please enter a valid month.';
+const errorLessThan = 'Please enter 16 digits.'
 
 const errorChecks = [errorName, errorNum, errorMonth, errorYear, errorCvc];
 const trueValues = (currentValue) => currentValue == true;
@@ -77,8 +79,7 @@ function updateName(e) {
     errorParams.colour = 'hsl(0, 100%, 66%)';
     errorParams.visibility = 'visible';
     errorChecks[0] = false;
-  }
-  else {
+  } else {
     errorParams.errorMessage = 'Placeholder';
     errorParams.colour = '';
     errorParams.visibility = 'hidden';
@@ -89,12 +90,14 @@ function updateName(e) {
     errorChecks[0] = false;
   }
   errorMessages(errorParams);
+
 }
 
 function updateNum(e) {
-  const regex = /.{4}/g;
+  const regexSequence = /.{4}/g;
+  const regexZeros = /^0+$/;
   checkLength(e, 16);
-  cardNum.textContent = e.target.value.replace(regex, function (x) {
+  cardNum.textContent = e.target.value.replace(regexSequence, function (x) {
     return x + " ";
   })
 
@@ -112,12 +115,12 @@ function updateNum(e) {
     errorParams.visibility = 'visible';
     errorChecks[1] = false;
   } else if (e.target.value.length < 16) {
-    errorParams.errorMessage = 'Placeholder';
-    errorParams.colour = '';
-    errorParams.visibility = 'hidden';
+    errorParams.errorMessage = errorLessThan;
+    errorParams.colour = 'hsl(0, 100%, 66%)';
+    errorParams.visibility = 'visible';
     errorChecks[1] = false;
-  } else if (e.target.value <= 0) {
-    errorParams.errorMessage = errorTextZeros;
+  } else if (regexZeros.test(e.target.value)) {
+    errorParams.errorMessage = errorOnlyZeros;
     errorParams.colour = 'hsl(0, 100%, 66%)';
     errorParams.visibility = 'visible';
     errorChecks[1] = false;
@@ -252,7 +255,7 @@ function updateCvc(e) {
     errorParams.errorMessage = 'Placeholder';
     errorParams.colour = '';
     errorParams.visibility = 'hidden';
-    cardYear.textContent = defaultYear;
+    cvc.textContent = defaultCvc;
     errorChecks[4] = false;
   }
   errorMessages(errorParams);
@@ -264,7 +267,7 @@ function checkLength(e, maxLength) {
   }
 }
 
-btnConfirm.addEventListener('click', (e) => {
+btnConfirm.addEventListener('click', (e,) => {
   e.preventDefault();
   for (let i = 0; i < errorChecks.length; i++) {
     if (errorChecks.every(trueValues)) {
@@ -277,8 +280,14 @@ btnConfirm.addEventListener('click', (e) => {
       errorMessageForm.textContent = 'All fields must be filled with valid info.'
       errorMessageForm.style.color = 'Red';
       for (let i = 0; i < inputFields.length; i++) {
+        if (errorChecks[i] == false || errorChecks[i] == undefined) {
+          inputFields[i].style.borderColor = 'hsl(0, 100%, 66%)';
+        } else {
+          inputFields[i].style.borderColor = '';
+        }
         inputFields[i].addEventListener('keydown', () => {
           errorMessageForm.style.visibility = 'hidden';
+          inputFields[i].style.borderColor = '';
         })
       }
     }

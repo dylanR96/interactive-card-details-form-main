@@ -131,8 +131,6 @@ input:focus {
 .card-section__front {
   background-image: url(images/bg-card-front.png);
   background-size: cover;
-  /* background: linear-gradient(to right bottom, hsl(249, 99%, 64%), hsl(279, 6%, 55%), hsl(278, 68%, 11%)); */
-  /* background-image: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%)); */
   color: white;
   height: 10em;
   width: 18rem;
@@ -171,7 +169,8 @@ input:focus {
 
 .card-section__card-num {
   text-align: center;
-  margin-top: 2.8rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .card-section__placeholders {
